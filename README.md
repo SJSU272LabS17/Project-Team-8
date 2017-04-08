@@ -1,6 +1,6 @@
 # Project-Team-8
 
-Abstract 1 - Music Analysis Web App
+Abstract 3 - Music Analysis Web App
 
 Traditional music players mostly focus on play music and music recommendation, but we want to give you more. Our music analysis web app combines a traditional music player with place recommendation using our unique analysis algorithm based on machine learning, more specifically, neural network.
 UI: there are three parts of User Interface, one part is for music play, second part is for recommendation info bulletin and the last part is left blank for commercial ads or business fairs.
@@ -10,7 +10,7 @@ Algorithm: A neural network specifically trained for music analysis. Music files
 The model will be trained using pre-labelled music data of each type and mood and then stored in the cloud. When a user uploads a music file to our app, it will analyse it and determine the user’s mood. By combining user’s mood, current location, weather and time, the app will give related place suggestions based on our recommendation algorithm.  
 
 -----------------------------------------------------------------------------
-Old Iead
+Old Idea
 
 Idea resource: http://ranjanr.blogspot.com/2017/02/brand-new-project-ideas-for-class-of.html
 
