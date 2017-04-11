@@ -1,6 +1,6 @@
 # Project-Team-8
 
-Abstract 3 - Music Analysis Web App
+Abstract 3 - Music Analysis Web App - APPROVED
 
 Traditional music players mostly focus on play music and music recommendation, but we want to give you more. Our music analysis web app combines a traditional music player with place recommendation using our unique analysis algorithm based on machine learning, more specifically, neural network.
 
