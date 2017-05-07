@@ -13,7 +13,7 @@
                 src="js/jquery-ui-1.8.23.custom.min.js"></script>
                  <script src="js/db.js"></script>
         <script src="js/app.js"></script>
-        <link type="text/css" rel="stylesheet" href="page.css">
+        <link type="text/css" rel="stylesheet" href="weather.css">
          <link type="text/css" href="css/jquery-ui-1.8.23.custom.css" >
 
 
@@ -120,3 +120,70 @@ google.maps.event.addDomListener(window, 'load', initialize);
            </path>
 		  
               <linearGradient id="gradient1">
+                  <stop offset="10%" stop-color="#FF0000"></stop>
+                  <stop offset="50%" stop-color="#00FF00"></stop>
+                  <stop offset="60%" stop-color="#FF69B4"></stop>
+                  <stop offset="100%" stop-color="#0000FF"></stop>
+              </linearGradient> 
+          </defs>    
+        
+		
+           <text font-family="san-serif" font-size="50px" font-weight="bold"
+              fill="url(#gradient1)" >
+                <textPath xlink:href="#path1">
+                    Music Analysis Webapp
+                </textPath>
+           </text>
+        </svg>
+    
+
+         <!--input music file-->
+        
+
+<label for="audioFileChooser">Upload an audio file: </label><br><br>
+<input  id="audioFileChooser" type="file" onchange="readFile(this.files);">
+
+<script>
+  function readFile(files) {
+    var fileReader = new FileReader();
+      fileReader.readAsArrayBuffer(files[0]);
+      fileReader.onload = function(e) {
+        playAudioFile(e.target.result);
+        console.log(("Filename: '" + files[0].name + "'"), ( "(" + ((Math.floor(files[0].size/1024/1024*100))/100) + " MB)" ));
+      }
+  }
+  function playAudioFile(file) {
+    var context = new window.AudioContext();
+      context.decodeAudioData(file, function(buffer) {
+        var source = context.createBufferSource();
+          source.buffer = buffer;
+          source.loop = false;
+          source.connect(context.destination);
+          source.start(0); 
+      });
+  }
+</script>
+
+   
+        
+          <!-- <div id="page-wrapper" style="float:right;margin-right:25px;margin-top:-240px;z-index:2;position:relative;opacity:0.75;font-size:20px;"> -->
+<hr>
+<hr>
+    <form id="new-todo-form" method="POST" action="#">
+      <input type="text" style="width:230px;font-size:20px;" name="new-todo" id="new-todo" placeholder="put favorite songs here..." required>
+    </form>
+
+
+    <ul id="todo-items"></ul>
+  </div>
+         </div>
+            
+     
+        </div> 
+    </div>
+        
+    
+        
+    </body>
+</html>
+
