@@ -14,7 +14,8 @@ The model will be trained using pre-labelled music data of each type and mood an
 
 
 
-![image](https://github.com/Adamkzh/Project-Team-8/pic/pr.jpeg)
+![pr](https://cloud.githubusercontent.com/assets/10546988/25777850/b9ac8c0c-329f-11e7-9cd1-cd6ed31d6211.jpeg)
+
 -----------------------------------------------------------------------------
 Old Idea
 
