@@ -166,7 +166,8 @@ $(document).ready(function() {
             
   <div id="map" style="width: 500px; height: 400px;position:relative; float:right;"></div>
   
-  <p id="demo"></p>
+  <p id="mood_index"> </p>
+  <p id="recommandation"> </p>
 
   <script type="text/javascript">
     // restaurant and nightclub
@@ -250,7 +251,8 @@ $(document).ready(function() {
       locations = mood20;
       zoom = 7
     }
-    document.getElementById("demo").innerHTML = temp;
+    document.getElementById("mood_index").innerHTML = "Your mood index is: " + temp + "<br>";
+    
     
     
     // center for 100/80: 37.334820, -121.885418, zoom 15
@@ -265,7 +267,9 @@ $(document).ready(function() {
     });
     var infowindow = new google.maps.InfoWindow();
     var marker, i;
+    var recommandation_list = "Places of Recommandation: <br>";
     for (i = 0; i < locations.length; i++) {  
+      recommandation_list = recommandation_list + locations[i][0] + "<br>";
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
         map: map
@@ -277,6 +281,7 @@ $(document).ready(function() {
         }
       })(marker, i));
     }
+    document.getElementById("recommandation").innerHTML = recommandation_list;
   </script>
 </body>
 </html>
