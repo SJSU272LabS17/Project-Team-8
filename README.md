@@ -12,6 +12,9 @@ Algorithm: A neural network specifically trained for music analysis. Music files
 
 The model will be trained using pre-labelled music data of each type and mood and then stored in the cloud. When a user uploads a music file to our app, it will analyse it and determine the user’s mood. By combining user’s mood, current location, weather and time, the app will give related place suggestions based on our recommendation algorithm.  
 
+
+
+![image]( https://github.com/Adamkzh/Project-Team-8/pic/pr.jpeg)
 -----------------------------------------------------------------------------
 Old Idea
 
