@@ -1,0 +1,68 @@
+.rounded {
+	border: 1px solid #ccc;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 2px 2px 3px #666;
+	-webkit-box-shadow: 2px 2px 3px #666;
+	box-shadow: 2px 2px 3px #666;
+	font-size: 12px;
+	padding: 4px 7px;
+	outline: 0;
+	-webkit-appearance: none;
+}
+input.rounded:focus {
+	border: 4px solid;
+	border-color: #FF0000;
+}
+
+#cloud{
+	position:fixed; right:0;bottom:0;
+	min-width:100%;min-height:30%;
+	width:auto;height:500px;z-index:-100;
+	background-size:cover;
+}
+	
+	#page-wrapper {
+  width: 550px;
+  margin: 2.5em auto;
+  background: #FFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+#new-todo-form {
+  padding: 0.5em;
+  background: #0088CC;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+#new-todo {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 3px;
+  border: 0;
+}
+
+#todo-items {
+  list-style: none;
+  padding: 0.5em 1em;
+  margin: 0;
+}
+
+#todo-items li {
+  font-size: 0.9em;
+  padding: 0.5em;
+  background: #FFF;
+  border-bottom: 1px solid #EEE;
+  margin: 0.5em 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+	
+	
