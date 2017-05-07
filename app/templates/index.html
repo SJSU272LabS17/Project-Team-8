@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>Team 8</title>
+    <link rel="stylesheet" href="../static/CSS/style.css" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet" type="text/css">
+    <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="//malsup.github.com/jquery.form.js"></script>
+  </head>
+
+  <body>
+    <div id="first">
+      <header>
+        <div class="container">
+          <div class="header-left">
+              <h><a href=#>CMPE 272 Project</a></h>
+            </div>
+          <div class="header-right">
+            <div class="navy">
+              <ul>  
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Resume</a></li>
+                <li><a href="#">E-mail</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- end of the header -->
+
+      <div id="main1">
+        <div id="main-right">
+          <div id="main-right-up">
+            <h1>Music</br>Genres</br>Classification.</h1>
+          </div>
+          <div id="main-right-down">
+            <h2>Classify music by genres</h2>
+            <div id="control">
+              <a id="start-now"><h2>Tap to predict</h2></a>
+              <h2>or</h2>
+            </div>
+            <form action="\upload" method='post' enctype="multipart/form-data">
+              <input type="file" name="file" id="file" class="inputfile" onchange="getSongs(this.files)"/>
+              <label id = "upload-text"for="file"><h2>Choose your own track...</h2></label>
+            </form>
+          </div>
+        </div>
+        <div id="audioplayer">
+          <ul id="playlist">
+            <li class="tittle">Category</li>
+            <li class="track" id="01">
+              Demo 1
+              <audio preload="true" src="http://docs.google.com/uc?export=open&id=0B9S7REv_QcDgcWJfTGlQeDhnbnc">
+            </li>
+            <li class="track" id="02">
+              Demo 2
+              <audio src="http://docs.google.com/uc?export=open&id=0B9S7REv_QcDgVmQyS0ZFdk9neVU">
+            </li>
+            <li class="track" id="03">
+              Demo 3
+              <audio src="http://docs.google.com/uc?export=open&id=0B9S7REv_QcDgdFhGa3dWakVTSTQ">
+            </li>
+            <li class="track" id="04">
+              Demo 4
+              <audio  src="http://docs.google.com/uc?export=open&id=0B9S7REv_QcDgNjlZaWdaRDVNTTA">
+            </li>
+            <li class="track" id="05">
+              Demo 5
+              <audio  src="http://docs.google.com/uc?export=open&id=0B9S7REv_QcDgaE54ekJqZVQwbnc">
+            </li>
+            <li class="track" id="06">
+              Demo 6
+              <audio  src="http://docs.google.com/uc?export=open&id=0B9S7REv_QcDgeU5iaVNpSE1PX1E">
+            </li>
+            <li class="track" id="07">
+              Demo 7
+              <audio  src="http://docs.google.com/uc?export=open&id=0B9S7REv_QcDgX1FVUGFJZ21VN2s">
+            </li>
+            <li class="track" id="08">
+              Demo 8
+              <audio  src="http://docs.google.com/uc?export=open&id=0B9S7REv_QcDgTFd4bTZrdFFXb0k">
+            </li>
+            <li class="track" id="09">
+              Demo 9
+              <audio  src="http://docs.google.com/uc?export=open&id=0B9S7REv_QcDgZ3UyeEF0TTZXM28">
+            </li>
+            <li class="track" id="10">
+              Demo 10
+              <audio  src="http://docs.google.com/uc?export=open&id=0B9S7REv_QcDgLUd6LUFuUDdTQ3M">
+            </li>
+          </ul>
+     	    <button id="pButton" class="play" onclick="play()"></button>
+          <div id="timeline">
+       		  <div id="playhead"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end of the picture part & start of the music style -->
+
+    <div id="music-type">
+      <h2>10 categories supported</h2>
+      <div id="type-down">
+        <div class="container">
+          <a href="https://en.wikipedia.org/wiki/Blues" target="_blank"><div class="type">Blues</div></a>
+          <a href="https://en.wikipedia.org/wiki/Classical_music" target="_blank"><div class="type">Classical</div></a>
+          <a href="https://en.wikipedia.org/wiki/Country_music" target="_blank"><div class="type">Country</div></a>
+          <a href="https://en.wikipedia.org/wiki/Disco" target="_blank"><div class="type">Disco</div></a>
+          <a href="https://en.wikipedia.org/wiki/Hip_hop" target="_blank"><div class="type">HipHop</div></a>
+          <a href="https://en.wikipedia.org/wiki/Jazz" target="_blank"><div class="type">Jazz</div></a>
+          <a href="https://en.wikipedia.org/wiki/Heavy_metal_music" target="_blank"><div class="type">Metal</div></a>
+          <a href="https://en.wikipedia.org/wiki/Pop_music" target="_blank"><div class="type">Pop</div></a>
+          <a href="https://en.wikipedia.org/wiki/Reggae" target="_blank"><div class="type">Reggae</div></a>
+          <a href="https://en.wikipedia.org/wiki/Rock_music" target="_blank"><div class="type">Rock</div></a>
+        </div>
+      </div>
+    </div>
+    <script src="../static/JS/test.js"></script>
+  </body>
+</html>

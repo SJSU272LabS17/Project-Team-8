@@ -1,0 +1,354 @@
+/* This is initialization! */
+
+body {
+  font-family: Raleway, PT Sans;
+  font-size: 13px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  transition: color 0.2s linear;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+/* ============================
+    This should be the header
+   ============================*/
+
+#first {
+  background: url("../pic/background.jpg");
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  float: left;
+  height: 650px;
+}
+
+header {
+  height: 80px;
+  width: 100%;
+
+}
+
+.header-left{
+  font-size: 2em;
+  font-family: PT Sans;
+  line-height: 40px;
+  margin: auto 0 auto 0;
+  font-weight: 700;
+  width: 30%;
+  float:left;
+
+}
+
+.header-left a {
+  color: #fff;
+}
+
+.header-right {
+  width:70%;
+  float:right;
+}
+
+.navy {
+  float: right;
+}
+
+.navy ul {
+  text-align: center;
+}
+
+.navy li {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.2em;
+}
+
+.navy li a{
+  color:white;
+}
+
+.navy li a:hover{
+  color:#fbda65;
+}
+
+
+/* ============================
+   the end of header
+   ============================*/
+
+
+#main1 {
+  padding: 30px 0 20px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  width:100%;
+}
+
+#pic1 {
+  width: 50%;
+  float: left;
+}
+
+#pic1 img {
+  width: 100%;
+}
+
+#main-right {
+  width:50%;
+  float: right;
+}
+
+#main-right-up h1{
+  width:100%;
+  margin: 70px 0 20px 70px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: 800;
+  font-family:Merriweather Sans;
+  letter-spacing: 4px;
+}
+
+#main-right-down{
+    margin: 0 0 0 70px;
+}
+
+#main-right-down h2{
+  color: #FFF;
+  font-size: 2em;
+  font-weight: 200;
+}
+
+#start-now h2{
+  height: 40px;
+  width: 300px;
+  background-color: #f7f7f7;
+  color: #5b9ad4;
+  font-weight:200;
+  text-align: center;
+  line-height:40px;
+  margin: 30px 0 0 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#start-now h2:hover {
+  background-color: #fbda65;
+  transition: background-color 0.2s linear;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#upload-text h2{
+  margin: 0;
+  color: #5b9ad4;
+}
+
+.inputfile + label {
+    display: inline-block;
+    height: 40px;
+    width: 300px;
+    background-color: #f7f7f7;
+    color: #5b9ad4;
+    font-weight:200;
+    text-align: center;
+    line-height:40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: #fbda65;
+  transition: background-color 0.2s linear;
+}
+/* ============================
+   the end of picture
+   ============================*/
+
+#music-type {
+  background-color: #f7f7f7;
+  float: left;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+#music-type h2{
+  text-align: center;
+  padding-top: 40px;
+  font-size: 1.7em;
+  padding-bottom: 20px;
+  font-family:Raleway;
+  margin:0;
+  text-transform: uppercase;
+  font-family: PT Sans;
+  font-weight:200;
+}
+
+.type {
+  text-align: center;
+  line-height:30px;
+  font-size:1.5em;
+  color: gray;
+}
+
+.type:hover{
+  color: black;
+  transition: color 0.2s linear;
+}
+
+#type-down a{
+  margin-right: 50px;
+  width: 120px;
+  height: 30px;
+  float: left;
+  margin-top:5px;
+}
+
+#type-down a:nth-child(5n) { margin-right: 0px;}
+
+#type-down a:hover{
+  background-color: #c2c2c2;
+  border-radius: 5px;
+  transition: background-color 0.2s linear;
+}
+
+/* ============================
+   the end of type
+   ============================*/
+
+   #audioplayer{
+    font-family: Open Sans;
+    font-size: 25px;
+   	width: 400px;
+   	height: 433px;
+   	margin: 50px auto auto 35px;
+    background-color: #C2C2C2;
+    float:left;
+    border: 1px solid #D6D6D6;
+   }
+
+   #pButton{
+       cursor: pointer;
+       height:48px;
+       width: 48px;
+       border: none;
+       background-size: 50% 50%;
+       background-repeat: no-repeat;
+       background-position: center;
+       float:left;
+       outline:none;
+   }
+
+.play{background: url('../pic/play.png') ;}
+.pause{background: url('../pic/pause.png') ;}
+
+#timeline{
+  cursor: pointer;
+	width: 340px;
+	height: 3px;
+	margin-top: 20px;
+	float: left;
+	border-radius: 15px;
+	background-color: white;
+  position: relative;
+  top: 2px;
+}
+#playhead{
+  cursor: pointer;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	margin-top: 1px;
+	background-color: #5B9AD4;
+  position: relative;
+  bottom: 8px;
+}
+
+   #pTittle{
+     weight: 100%;
+     background-color: #4B86CA;
+     margin: 0;
+
+   }
+
+   #audioplayer ul{
+     text-indent: 20px;
+     background-color: white;
+     text-align: left;
+     color: #515151;
+   }
+
+   #audioplayer li{
+     height: 30px;
+     margin: 0;
+     padding-top: 1%;
+     font-size: 20px;
+   }
+
+
+   .seprator{
+     color: #D7D7D7;
+     background-color: #D7D7D7;
+     display: block;
+     height: 2px;
+     border: 0;
+     border-top: 1px solid #D7D7D7;
+     padding: 0;
+     margin: 0;
+   }
+
+   #playlist{
+     margin: 0;
+     list-style-type: none;
+     padding-left:0;
+   }
+
+   #audioplayer li.track:hover {
+       background-color: #5B9AD4;
+       color:white;
+       transition: background-color 0.2s linear;
+   }
+
+   #audioplayer li.track {
+     cursor: pointer;
+   }
+
+   .currentTrack {
+       background-color: #5B9AD4;
+       color:white;
+   }
+
+   #audioplayer li.tittle{
+       font-size: 35px;
+       background-color: #5B9AD4;
+       color:white;
+       height: 40px;
+   }
+
+   /* ============================
+      the end of music player
+      ============================*/
