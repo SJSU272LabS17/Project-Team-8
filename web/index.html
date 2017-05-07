@@ -12,6 +12,8 @@
          <script src="js/app.js"></script>
         <link type="text/css" rel="stylesheet" href="weather.css">
          <link type="text/css" href="css/jquery-ui-1.8.23.custom.css" > 
+         <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
 
 <style type="text/css">
 
@@ -152,7 +154,7 @@ $(document).ready(function() {
 
 <button style="position:relative;left:40%;font-size:25px;color:blue;background-color:pink;" type="button">Click Me</button>
 <hr>
-<div style="width:40%">
+<div style="width:43%;float:left;">
     <form id="new-todo-form" method="POST" action="#">
       <input type="text" style="width:230px;font-size:20px;" name="new-todo" id="new-todo" placeholder="put favorite songs here..." required>
     </form>
@@ -162,11 +164,120 @@ $(document).ready(function() {
 </div>
         
             
-     
-      
+  <div id="map" style="width: 500px; height: 400px;position:relative; float:right;"></div>
+  
+  <p id="demo"></p>
+
+  <script type="text/javascript">
+    // restaurant and nightclub
+    var mood100 = [
+      ['Panda Express', 37.336657, -121.880944, 1],
+      ['Flames Eatery & Bar', 37.336154, -121.885890, 2],    
+      ['La Victoria Taqueria', 37.332503, -121.883894, 3],
+      ['Punjab Cafe', 37.339199, -121.883368, 4],
+      ['Cloudz Hookah Lounge', 37.339909, -121.880631, 5],
+      ['LVL 44', 37.334620, -121.893205, 6],
+      ['Tanq Bar', 37.331583, -121.888571, 7],
+      ['Miami Beach Club', 37.328989, -121.886167, 8]
+    ];
+    // coffee shop
+    var mood80 = [
+      ['starbucks1', 37.336464, -121.878800, 1],
+      ['starbucks2', 37.332980, -121.886102, 2],
+      ['starbucks3', 37.335270, -121.892705, 3],
+      ['starbucks4', 37.332677, -121.891117, 4],
+      ['Amor Café and Tea', 37.335274, -121.885676, 5],
+      ['Philz Coffee', 37.333595, -121.884495, 6]
+    ];
+    // mesume and park
+    var mood60 = [
+      ['San Jose Museum of Art', 37.333966, -121.888281, 1],
+      ['San Jose Museum of Quilts & Textiles', 37.328028, -121.884375, 2],
+      ['Japanese American Museum of San Jose', 37.347476, -121.893688, 3],
+      ['The Tech Museum of Innovation', 37.331657, -121.890099, 4],
+      ['St James Park', 37.338878, -121.891242, 5],
+      ['Harts Dog Park', 37.334476, -121.893559, 6]
+    ];
+    // massage and spa
+    var mood40 = [
+      ['Serene Asian Massage', 37.339402, -121.889179, 1],
+      ['Oceanic Day Spa', 37.324466, -121.880162, 2],
+      ['Roman Spa', 37.330745, -121.856301, 3],
+      ['VIP Spa', 37.323988, -121.907800, 4],
+      ['Healthy Spa', 37.358858, -121.908143, 5]
+    ];
+    // sea and mountain
+    var mood20 = [
+      ['Carmel-By-The-Sea', 36.551474, -121.930005, 1],
+      ['Santa Cruz', 36.974081, -122.031008, 2],
+      ['Big Sur State Park', 36.244699, -121.787684, 3],
+      ['Point Bonita Lighthouse', 37.815730, -122.529601, 4],
+      ['Lake Tahoe', 38.958743, -119.974368, 5],
+      ['Yosemite Valley', 37.852978, -119.570944, 6]
+    ];
+    var mood_index = Math.floor(Math.random() * 100) + 1 ;
+    var temp = 0;
+    var center = new google.maps.LatLng(37.334820, -121.885418);
+    var locations = mood20;
+    var zoom = 7;
+    if(mood_index > 80){
+      temp = mood_index;
+      center = new google.maps.LatLng(37.334820, -121.885418);
+      locations = mood100;
+      zoom = 15
+    }
+    else if(mood_index >60){
+      temp = mood_index;
+      center = new google.maps.LatLng(37.334820, -121.885418);
+      locations = mood80;
+      zoom = 15
+    }
+    else if(mood_index > 40){
+      temp = mood_index;
+      center = new google.maps.LatLng(37.340768, -121.886954);
+      locations = mood60;
+      zoom = 14
+    }
+    else if(mood_index > 20){
+      temp = mood_index;
+      center = new google.maps.LatLng(37.340163, -121.893466);
+      locations = mood40;
+      zoom = 13
+    }
+    else{
+      temp = mood_index;
+      center = new google.maps.LatLng(37.855903, -121.045220);
+      locations = mood20;
+      zoom = 7
+    }
+    document.getElementById("demo").innerHTML = temp;
     
-        
     
-        
-    </body>
+    // center for 100/80: 37.334820, -121.885418, zoom 15
+    // center for 60: 37.340768, -121.886954, zoom 14
+    // center for 40: 37.340163, -121.893466, zoom 13
+    // center for 20: 37.855903, -121.045220, zoom 7
+    //var center = new google.maps.LatLng(37.855903, -121.045220);
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: zoom,
+      center: center,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    var infowindow = new google.maps.InfoWindow();
+    var marker, i;
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+</body>
 </html>
+
