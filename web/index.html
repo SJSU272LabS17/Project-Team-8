@@ -112,7 +112,6 @@ $(document).ready(function() {
       });
   }
 
-
     </script>     
    
     </head>
@@ -167,7 +166,7 @@ $(document).ready(function() {
   <div id="map" style="width: 500px; height: 400px;position:relative; float:right;"></div>
   
   <p id="mood_index"> </p>
-  <p id="recommandation"> </p>
+  <p id="recommendation"> </p>
 
   <script type="text/javascript">
 
@@ -245,7 +244,7 @@ $(document).ready(function() {
       ['Lake Tahoe', 38.958743, -119.974368, 5],
       ['Yosemite Valley', 37.852978, -119.570944, 6]
     ];
-    //var mood_index = Math.floor(Math.random() * 100) + 1 ;
+    
     var temp = 0;
     var center = new google.maps.LatLng(37.334820, -121.885418);
     var locations = mood20;
@@ -282,12 +281,6 @@ $(document).ready(function() {
     }
     document.getElementById("mood_index").innerHTML = "Your mood index is: " + temp + "<br>";
     
-    
-    // center for 100/80: 37.334820, -121.885418, zoom 15
-    // center for 60: 37.340768, -121.886954, zoom 14
-    // center for 40: 37.340163, -121.893466, zoom 13
-    // center for 20: 37.855903, -121.045220, zoom 7
-    //var center = new google.maps.LatLng(37.855903, -121.045220);
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: zoom,
       center: center,
@@ -295,9 +288,10 @@ $(document).ready(function() {
     });
     var infowindow = new google.maps.InfoWindow();
     var marker, i;
-    var recommandation_list = "Places of Recommandation: <br>";
+    var recommendation_list = "Places of Recommendation: <br>";
+
     for (i = 0; i < locations.length; i++) {  
-      recommandation_list = recommandation_list + locations[i][0] + "<br>";
+      recommendation_list = recommendation_list + locations[i][0] + "<br>";
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
         map: map
@@ -309,9 +303,9 @@ $(document).ready(function() {
         }
       })(marker, i));
     }
-    document.getElementById("recommandation").innerHTML = recommandation_list;
+    document.getElementById("recommendation").innerHTML = recommendation_list;
   }
-  
+
   </script>
 </body>
 </html>
