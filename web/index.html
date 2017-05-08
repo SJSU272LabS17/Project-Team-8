@@ -173,7 +173,7 @@ $(document).ready(function() {
     function showMap()
     {
         var thefile = document.getElementById('audio-upload');
-        var music_name = thefile.value;
+        var music_name = thefile.value.split("\\").pop(-1);;
         var mood_index;
 
         switch(music_name) {
