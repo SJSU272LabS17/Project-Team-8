@@ -1,5 +1,7 @@
 # Project-Team-8
 
+Web App Url: http://ec2-52-53-244-199.us-west-1.compute.amazonaws.com/web/
+
 Abstract 3 - Music Analysis Web App - APPROVED
 
 Traditional music players mostly focus on play music and music recommendation, but we want to give you more. Our music analysis web app combines a traditional music player with place recommendation using our unique analysis algorithm based on machine learning, more specifically, neural network.
